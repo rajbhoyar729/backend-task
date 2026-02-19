@@ -1,0 +1,325 @@
+{
+    "info": {
+        "_postman_id": "sports-fitness-api-collection",
+        "name": "Sports & Fitness API",
+        "description": "API collection for Sports & Fitness application backend.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Onboarding",
+            "item": [
+                {
+                    "name": "Get All Steps",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/steps",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "steps"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Step by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/steps/step1",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "steps",
+                                "step1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Onboarding Status",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "deviceId",
+                                "value": "device-123",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/onboarding",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "onboarding"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Save Answer",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "deviceId",
+                                "value": "device-123",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"answer\": \"My Answer\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/onboarding/answers/step1",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "onboarding",
+                                "answers",
+                                "step1"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Journeys",
+            "item": [
+                {
+                    "name": "Get All Journeys",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/journeys",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "journeys"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Journey by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/journeys/YOUR_JOURNEY_ID_HERE",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "journeys",
+                                "YOUR_JOURNEY_ID_HERE"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Favorite Journey",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "deviceId",
+                                "value": "device-123",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/journeys/YOUR_JOURNEY_ID_HERE/favorite",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "journeys",
+                                "YOUR_JOURNEY_ID_HERE",
+                                "favorite"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Unfavorite Journey",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "deviceId",
+                                "value": "device-123",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/journeys/YOUR_JOURNEY_ID_HERE/favorite",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "journeys",
+                                "YOUR_JOURNEY_ID_HERE",
+                                "favorite"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Runs",
+            "item": [
+                {
+                    "name": "Get Current Run",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "deviceId",
+                                "value": "device-123",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/runs/current",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "runs",
+                                "current"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Run by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/runs/YOUR_RUN_ID_HERE",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "runs",
+                                "YOUR_RUN_ID_HERE"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Run Route",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/runs/YOUR_RUN_ID_HERE/route",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "runs",
+                                "YOUR_RUN_ID_HERE",
+                                "route"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "External Content",
+            "item": [
+                {
+                    "name": "Get Placeholder Content",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/content/placeholder",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "content",
+                                "placeholder"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:5000",
+            "type": "string"
+        }
+    ]
+}
