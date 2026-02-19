@@ -17,9 +17,11 @@ import { apiLimiter } from './middleware/rateLimiter';
 app.use('/api', apiLimiter);
 
 // Swagger Docs
-import swaggerUi from 'swagger-ui-express';
-import { specs } from './config/swagger';
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+if (process.env.NODE_ENV !== 'test') {
+    const swaggerUi = require('swagger-ui-express');
+    const { specs } = require('./config/swagger');
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+}
 
 // Routes
 // Routes
